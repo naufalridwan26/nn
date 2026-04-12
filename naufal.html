@@ -14,7 +14,9 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: radial-gradient(circle, #ffffff 0%, #f3efea 100%); /* Efek gradien agar tidak flat */
+            /* Gradient Rose Gold yang lembut */
+            background: radial-gradient(circle, #fff5f5 0%, #eecda3 100%); 
+            background: linear-gradient(135deg, #fce4ec 0%, #f1d5d2 50%, #d4a3a3 100%);
             color: #2c2c2c;
         }
 
@@ -22,20 +24,20 @@
             text-align: center;
             background: #ffffff;
             padding: 50px 40px;
-            border-radius: 2px; /* Gaya minimalis kotak elegan */
-            box-shadow: 0 20px 50px rgba(0,0,0,0.08); /* Shadow yang dalam agar terlihat 3D/timbul */
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(183, 110, 110, 0.15); /* Shadow kemerahan tipis */
             max-width: 450px;
             width: 85%;
-            border: 1px solid #e0d8cc;
+            /* Border warna Rose Gold Metalik */
+            border: 1px solid #d4a3a3; 
             position: relative;
         }
 
-        /* Garis dekoratif atas */
         .card::before {
             content: "";
             position: absolute;
             top: 10px; left: 10px; right: 10px; bottom: 10px;
-            border: 1px solid #e0d8cc;
+            border: 1px solid #eecda3; /* Garis dekoratif lebih terang */
             pointer-events: none;
         }
 
@@ -44,7 +46,8 @@
             letter-spacing: 1px;
             margin-bottom: 5px;
             text-transform: uppercase;
-            color: #8a7b66;
+            /* Warna teks Rose Brown */
+            color: #a67c7c; 
         }
 
         .guest-name {
@@ -52,7 +55,8 @@
             font-size: 2.2em;
             font-weight: 700;
             font-style: italic;
-            color: #4a3f35;
+            /* Warna fokus Rose Gold Gelap */
+            color: #8c5e5e; 
             margin: 20px 0 40px 0;
             display: block;
             line-height: 1.2;
@@ -62,7 +66,8 @@
             font-family: 'Montserrat', sans-serif;
             display: inline-block;
             text-decoration: none;
-            background-color: #4a3f35;
+            /* Tombol warna Rose Gold Solid */
+            background-color: #b76e79; 
             color: #ffffff;
             padding: 15px 40px;
             letter-spacing: 2px;
@@ -70,14 +75,14 @@
             font-size: 0.8em;
             font-weight: 600;
             transition: all 0.4s ease;
-            border: 1px solid #4a3f35;
+            border: 1px solid #b76e79;
         }
 
         .btn-open:hover {
             background-color: transparent;
-            color: #4a3f35;
+            color: #b76e79;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(183, 110, 121, 0.2);
         }
     </style>
 </head>
@@ -98,7 +103,6 @@
         let nama = urlParams.get('to');
 
         if (nama) {
-            // Membersihkan karakter aneh dan menampilkan nama
             document.getElementById('nama-tamu').innerText = decodeURIComponent(nama);
         }
     </script>
