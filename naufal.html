@@ -1,72 +1,101 @@
-body {
-    font-family: 'Ibarra Nova', serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    /* Gradient Sage Green */
-    background: linear-gradient(135deg, #eef3ef 0%, #dce5dc 50%, #b7c4b7 100%);
-    color: #2c2c2c;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Undangan</title>
 
-.card {
-    text-align: center;
-    background: #ffffff;
-    padding: 50px 40px;
-    border-radius: 4px;
-    box-shadow: 0 20px 50px rgba(120, 140, 120, 0.15);
-    max-width: 450px;
-    width: 85%;
-    border: 1px solid #a3b18a;
-    position: relative;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Nova:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: 10px; left: 10px; right: 10px; bottom: 10px;
-    border: 1px solid #cfe1cf;
-    pointer-events: none;
-}
+    <style>
+    body {
+        font-family: 'Ibarra Nova', serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #eef3ef 0%, #dce5dc 50%, #b7c4b7 100%);
+        color: #2c2c2c;
+    }
 
-p {
-    font-size: 1.1em;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    color: #7a8f7a;
-}
+    .card {
+        text-align: center;
+        background: #ffffff;
+        padding: 50px 40px;
+        border-radius: 4px;
+        box-shadow: 0 20px 50px rgba(120, 140, 120, 0.15);
+        max-width: 450px;
+        width: 85%;
+        border: 1px solid #a3b18a;
+        position: relative;
+    }
 
-.guest-name {
-    font-family: 'Ibarra Nova', serif;
-    font-size: 2.2em;
-    font-weight: 700;
-    font-style: italic;
-    color: #5f7a5f;
-    margin: 20px 0 40px 0;
-    display: block;
-    line-height: 1.2;
-}
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 10px; left: 10px; right: 10px; bottom: 10px;
+        border: 1px solid #cfe1cf;
+        pointer-events: none;
+    }
 
-.btn-open {
-    font-family: 'Montserrat', sans-serif;
-    display: inline-block;
-    text-decoration: none;
-    background-color: #8fae8f;
-    color: #ffffff;
-    padding: 15px 40px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.8em;
-    font-weight: 600;
-    transition: all 0.4s ease;
-    border: 1px solid #8fae8f;
-}
+    p {
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        color: #7a8f7a;
+    }
 
-.btn-open:hover {
-    background-color: transparent;
-    color: #8fae8f;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(143, 174, 143, 0.2);
+    .guest-name {
+        font-size: 2.2em;
+        font-weight: 700;
+        font-style: italic;
+        color: #5f7a5f;
+        margin: 20px 0 40px 0;
+        display: block;
+    }
+
+    .btn-open {
+        font-family: 'Montserrat', sans-serif;
+        display: inline-block;
+        text-decoration: none;
+        background-color: #8fae8f;
+        color: #ffffff;
+        padding: 15px 40px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 600;
+        border: 1px solid #8fae8f;
+    }
+
+    .btn-open:hover {
+        background-color: transparent;
+        color: #8fae8f;
+    }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <p>Kepada Yang Terhormat,</p>
+    <span id="nama-tamu" class="guest-name">Tamu Undangan</span>
+    <p style="text-transform:none; font-style:italic;">
+        Kami mengundang Anda untuk hadir di acara kami.
+    </p>
+
+    <a href="https://naufal-check.my.canva.site" class="btn-open">Buka Undangan</a>
+</div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+let nama = urlParams.get('to');
+
+if (nama) {
+    document.getElementById('nama-tamu').innerText = decodeURIComponent(nama);
 }
+</script>
+
+</body>
+</html>
