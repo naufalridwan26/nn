@@ -5,126 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Undangan Spesial</title>
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Ibarra+Nova:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Ibarra Nova', serif;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
 
-            /* Sage Green - lebih deep & elegan */
-            background: linear-gradient(135deg, #e2ebe2 0%, #c2d2c2 50%, #8fa98f 100%);
+            font-family: 'Ibarra Nova', serif;
+
+            /* Gradient dari palette Canva */
+            background: linear-gradient(135deg, #EEF2EC 0%, #DDE5D8 50%, #B2BBA9 100%);
             color: #2c2c2c;
         }
 
         .card {
-            text-align: center;
             background: #ffffff;
-            padding: 50px 40px;
-            border-radius: 6px;
-
-            box-shadow: 0 20px 50px rgba(70, 90, 70, 0.18);
-
-            max-width: 450px;
+            padding: 55px 45px;
             width: 85%;
+            max-width: 420px;
+            text-align: center;
 
-            border: 1px solid #8aa58a;
+            border-radius: 8px;
+            border: 1px solid #B2BBA9;
+
+            box-shadow: 0 25px 60px rgba(100, 110, 95, 0.18);
             position: relative;
         }
 
+        /* inner border biar classy */
         .card::before {
             content: "";
             position: absolute;
-            top: 12px; left: 12px; right: 12px; bottom: 12px;
-            border: 1px solid #c7d9c7;
+            top: 14px; left: 14px; right: 14px; bottom: 14px;
+            border: 1px solid #DDE5D8;
             pointer-events: none;
         }
 
-        p {
-            font-size: 1.05em;
-            letter-spacing: 1.5px;
-            margin-bottom: 5px;
+        .title {
+            font-size: 1em;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #6f866f;
+            color: #8F9A85;
+            margin-bottom: 10px;
         }
 
         .guest-name {
-            font-size: 2.3em;
+            font-size: 2.4em;
             font-weight: 700;
             font-style: italic;
-            color: #3f5f3f;
-            margin: 20px 0 40px 0;
-            display: block;
+            color: #6E7866;
+            margin: 25px 0 35px 0;
             line-height: 1.2;
         }
 
         .desc {
-            text-transform: none;
-            font-style: italic;
             font-size: 1em;
-            margin-bottom: 30px;
-            color: #5f6f5f;
+            font-style: italic;
+            color: #7f8a76;
+            margin-bottom: 35px;
         }
 
         .btn-open {
             font-family: 'Montserrat', sans-serif;
-            display: inline-block;
             text-decoration: none;
 
-            background: linear-gradient(135deg, #7f9f7f, #5f7f5f);
+            background-color: #B2BBA9;
             color: #ffffff;
 
-            padding: 15px 45px;
+            padding: 15px 50px;
+            font-size: 0.8em;
             letter-spacing: 2px;
             text-transform: uppercase;
-            font-size: 0.8em;
             font-weight: 600;
 
-            border: none;
+            border-radius: 2px;
+            border: 1px solid #B2BBA9;
+
             transition: all 0.3s ease;
         }
 
         .btn-open:hover {
             background: transparent;
-            color: #5f7f5f;
-            border: 1px solid #5f7f5f;
+            color: #6E7866;
+            border: 1px solid #6E7866;
 
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(80, 100, 80, 0.25);
+            box-shadow: 0 12px 25px rgba(100, 110, 95, 0.25);
         }
     </style>
 </head>
 
 <body>
 
-<div class="card">
-    <p>Kepada Yang Terhormat</p>
+    <div class="card">
+        <div class="title">Kepada Yang Terhormat</div>
 
-    <span id="nama-tamu" class="guest-name">
-        Tamu Undangan
-    </span>
+        <div id="nama-tamu" class="guest-name">
+            Tamu Undangan
+        </div>
 
-    <p class="desc">
-        Kami mengundang Anda untuk hadir di acara kami.
-    </p>
+        <div class="desc">
+            Kami mengundang Anda untuk hadir di acara kami.
+        </div>
 
-    <a href="https://naufal-check.my.canva.site" class="btn-open">
-        Buka Undangan
-    </a>
-</div>
+        <a href="https://naufal-check.my.canva.site" class="btn-open">
+            Buka Undangan
+        </a>
+    </div>
 
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    let nama = urlParams.get('to');
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let nama = urlParams.get('to');
 
-    if (nama) {
-        document.getElementById('nama-tamu').innerText = decodeURIComponent(nama);
-    }
-</script>
+        if (nama) {
+            document.getElementById('nama-tamu').innerText = decodeURIComponent(nama);
+        }
+    </script>
 
 </body>
 </html>
